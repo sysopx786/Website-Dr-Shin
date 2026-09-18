@@ -62,7 +62,7 @@ function subscribeConsent(fn) {
 	};
 }
 //#endregion
-//#region node_modules/.nitro/vite/services/ssr/assets/router-U4XLDv2R.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-Bnfeg8n2.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var __defProp = Object.defineProperty;
@@ -366,7 +366,7 @@ function PreviewHostBridge() {
 	}, [router]);
 	return null;
 }
-var choiceClass = "inline-flex min-h-12 items-center justify-center rounded-md border-2 border-paper bg-transparent px-5 text-base font-semibold text-paper hover:bg-paper/15";
+var choiceClass = "inline-flex min-h-12 items-center justify-center rounded-md border-2 border-paper bg-transparent px-3 text-base font-semibold text-paper hover:bg-paper/15 sm:px-5";
 function CookieBanner({ forceOpen = false }) {
 	const record = (0, import_react.useSyncExternalStore)(subscribeConsent, readConsent, () => null);
 	const bannerRef = (0, import_react.useRef)(null);
@@ -378,19 +378,16 @@ function CookieBanner({ forceOpen = false }) {
 		return () => window.removeEventListener(CONSENT_FOCUS_EVENT, onOpen);
 	}, []);
 	if (record && !forceOpen) return null;
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-		className: "h-44 shrink-0 sm:h-36 lg:h-28",
-		"aria-hidden": "true"
-	}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 		ref: bannerRef,
 		id: "cookie-banner",
 		tabIndex: -1,
 		role: "region",
 		"aria-labelledby": "cookie-banner-title",
 		"aria-describedby": "cookie-banner-copy",
-		className: "fixed inset-x-0 bottom-0 z-overlay border-t border-rule bg-ink text-paper shadow-border outline-none",
+		className: "border-t border-rule bg-ink text-paper shadow-border outline-none",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4 sm:px-6 lg:flex-row lg:items-end lg:gap-8",
+			className: "mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3 sm:px-6 lg:flex-row lg:items-end lg:gap-8",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "min-w-0 flex-1",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
@@ -399,9 +396,9 @@ function CookieBanner({ forceOpen = false }) {
 					children: "Cookies on this site"
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
 					id: "cookie-banner-copy",
-					className: "mt-2 text-base leading-relaxed text-paper",
+					className: "mt-1 text-base leading-relaxed text-paper",
 					children: [
-						"We do not use advertising or analytics cookies. Two equal choices: keep the site essential-only, or allow the office map from OpenStreetMap. Nothing is pre-checked. The site works either way.",
+						"We do not use advertising or analytics cookies. Two equal choices: essential only, or allow the office map. Nothing is pre-checked.",
 						" ",
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
 							to: "/cookies",
@@ -411,7 +408,7 @@ function CookieBanner({ forceOpen = false }) {
 					]
 				})]
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "flex flex-col gap-2 sm:flex-row",
+				className: "grid grid-cols-2 gap-2 lg:flex",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 					type: "button",
 					className: choiceClass,
@@ -425,7 +422,7 @@ function CookieBanner({ forceOpen = false }) {
 				})]
 			})]
 		})
-	})] });
+	});
 }
 function CookieSettingsButton({ className }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
@@ -436,6 +433,45 @@ function CookieSettingsButton({ className }) {
 		},
 		children: "Cookie settings"
 	});
+}
+function AppointmentDock() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", {
+		"aria-label": "Appointments",
+		className: "border-t border-paper/20 bg-forest-deep pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 text-paper",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "mx-auto grid max-w-6xl grid-cols-2 gap-3 px-4 sm:px-6",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+				href: PHONE_TEL,
+				className: "inline-flex min-h-14 items-center justify-center gap-2 rounded-md bg-paper px-3 text-center text-base font-semibold leading-tight text-forest hover:bg-surface",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, {
+					className: "size-5 shrink-0",
+					"aria-hidden": "true"
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: ["Schedule appointment", /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+					className: "sr-only",
+					children: [" — call ", PHONE_DISPLAY]
+				})] })]
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+				href: PORTAL_URL,
+				target: "_blank",
+				rel: "noopener noreferrer",
+				className: "inline-flex min-h-14 items-center justify-center gap-2 rounded-md border-2 border-paper px-3 text-center text-base font-semibold leading-tight text-paper hover:bg-paper/15",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CalendarDays, {
+					className: "size-5 shrink-0",
+					"aria-hidden": "true"
+				}), "View appointment"]
+			})]
+		})
+	});
+}
+function BottomChrome() {
+	const showCookie = (0, import_react.useSyncExternalStore)(subscribeConsent, readConsent, () => null) === null;
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		className: cn("shrink-0", showCookie ? "h-72 sm:h-64 lg:h-56" : "h-24"),
+		"aria-hidden": "true"
+	}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "fixed inset-x-0 bottom-0 z-overlay",
+		children: [showCookie ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CookieBanner, {}) : null, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AppointmentDock, {})]
+	})] });
 }
 function CrisisBanner() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
@@ -872,11 +908,11 @@ function SiteShell({ children }) {
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SiteHeader, {}),
 			children,
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SiteFooter, {}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CookieBanner, {})
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(BottomChrome, {})
 		]
 	});
 }
-var styles_default = "/assets/styles-AytjZOkV.css";
+var styles_default = "/assets/styles-z-QZSZVy.css";
 var HOME = PAGE_SEO["/"];
 var Route$17 = createRootRoute({
 	head: () => ({
@@ -1024,7 +1060,7 @@ function NotFound() {
 		]
 	});
 }
-var $$splitComponentImporter$16 = () => import("./routes-lPlAfmuu.mjs");
+var $$splitComponentImporter$16 = () => import("./routes-CL2VRS_a.mjs");
 var Route$16 = createFileRoute("/")({
 	component: lazyRouteComponent($$splitComponentImporter$16, "component"),
 	head: () => ({
@@ -1037,17 +1073,17 @@ var Route$16 = createFileRoute("/")({
 		}]
 	})
 });
-var $$splitComponentImporter$15 = () => import("./about-UgPzUj1-.mjs");
+var $$splitComponentImporter$15 = () => import("./about-2PEHSgHh.mjs");
 var Route$15 = createFileRoute("/about")({
 	component: lazyRouteComponent($$splitComponentImporter$15, "component"),
 	head: () => pageHead("/about")
 });
-var $$splitComponentImporter$14 = () => import("./contact-CcuUUavs.mjs");
+var $$splitComponentImporter$14 = () => import("./contact-CIdscuLO.mjs");
 var Route$14 = createFileRoute("/contact")({
 	component: lazyRouteComponent($$splitComponentImporter$14, "component"),
 	head: () => pageHead("/contact")
 });
-var $$splitComponentImporter$13 = () => import("./cookies-Cfbct1eb.mjs");
+var $$splitComponentImporter$13 = () => import("./cookies-BnR3kihA.mjs");
 var Route$13 = createFileRoute("/cookies")({
 	component: lazyRouteComponent($$splitComponentImporter$13, "component"),
 	head: () => pageHead("/cookies")
@@ -1059,12 +1095,12 @@ var Route$12 = createFileRoute("/dr-shin")({
 	},
 	component: lazyRouteComponent($$splitComponentImporter$12, "component")
 });
-var $$splitComponentImporter$11 = () => import("./dr-yong-shin-Dv8ivXDL.mjs");
+var $$splitComponentImporter$11 = () => import("./dr-yong-shin-B28149NJ.mjs");
 var Route$11 = createFileRoute("/dr-yong-shin")({
 	component: lazyRouteComponent($$splitComponentImporter$11, "component"),
 	head: () => pageHead("/dr-yong-shin")
 });
-var $$splitComponentImporter$10 = () => import("./insurance-DDMMBewI.mjs");
+var $$splitComponentImporter$10 = () => import("./insurance-B_zaOC3u.mjs");
 var Route$10 = createFileRoute("/insurance")({
 	component: lazyRouteComponent($$splitComponentImporter$10, "component"),
 	head: () => pageHead("/insurance")
@@ -1074,12 +1110,12 @@ var Route$9 = createFileRoute("/licenses")({
 	component: lazyRouteComponent($$splitComponentImporter$9, "component"),
 	head: () => pageHead("/licenses")
 });
-var $$splitComponentImporter$8 = () => import("./meet-the-team-CbsvQTT9.mjs");
+var $$splitComponentImporter$8 = () => import("./meet-the-team-DwFdhAur.mjs");
 var Route$8 = createFileRoute("/meet-the-team")({
 	component: lazyRouteComponent($$splitComponentImporter$8, "component"),
 	head: () => pageHead("/meet-the-team")
 });
-var $$splitComponentImporter$7 = () => import("./new-patients-DtFWvlYd.mjs");
+var $$splitComponentImporter$7 = () => import("./new-patients-CFT-0Rhi.mjs");
 var Route$7 = createFileRoute("/new-patients")({
 	component: lazyRouteComponent($$splitComponentImporter$7, "component"),
 	head: () => pageHead("/new-patients")
@@ -1091,7 +1127,7 @@ var Route$6 = createFileRoute("/patients")({
 	},
 	component: lazyRouteComponent($$splitComponentImporter$6, "component")
 });
-var $$splitComponentImporter$5 = () => import("./privacy-CYF4KTTu.mjs");
+var $$splitComponentImporter$5 = () => import("./privacy-XcQp54ec.mjs");
 var Route$5 = createFileRoute("/privacy")({
 	component: lazyRouteComponent($$splitComponentImporter$5, "component"),
 	head: () => pageHead("/privacy")
@@ -1118,7 +1154,7 @@ var Route$1 = createFileRoute("/terms")({
 	component: lazyRouteComponent($$splitComponentImporter$1, "component"),
 	head: () => pageHead("/terms")
 });
-var $$splitComponentImporter = () => import("./unsubscribe-VQpzKoFG.mjs");
+var $$splitComponentImporter = () => import("./unsubscribe-Cu4Idl_P.mjs");
 var Route = createFileRoute("/unsubscribe")({
 	component: lazyRouteComponent($$splitComponentImporter, "component"),
 	head: () => pageHead("/unsubscribe")

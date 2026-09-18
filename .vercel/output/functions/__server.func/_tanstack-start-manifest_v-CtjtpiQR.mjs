@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-C74NFiOG.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-CtjtpiQR.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "/workspace/src/routes/__root.tsx",
@@ -21,29 +21,29 @@ var tsrStartManifest = () => ({ routes: {
 			"/terms",
 			"/unsubscribe"
 		],
-		preloads: ["/assets/index-CYajHGWl.js", "/assets/seo-B3IFoSKA.js"],
+		preloads: ["/assets/index-CaUQwxCc.js", "/assets/seo-B3IFoSKA.js"],
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-CYajHGWl.js"
+			src: "/assets/index-CaUQwxCc.js"
 		} }]
 	},
 	"/": {
 		filePath: "/workspace/src/routes/index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/routes-c___pAyH.js",
-			"/assets/map-pin-VMcd80vJ.js",
+			"/assets/routes-BPD4A-4x.js",
+			"/assets/map-pin-1ayBnTlX.js",
 			"/assets/site-image-CzJKraK9.js",
 			"/assets/json-ld-F5tmKDVf.js",
-			"/assets/visit-links-CysRQGtb.js"
+			"/assets/visit-links-CYc6r_Pd.js"
 		]
 	},
 	"/about": {
 		filePath: "/workspace/src/routes/about.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/about-CR5JcQ4a.js",
+			"/assets/about-COIhHare.js",
 			"/assets/section-DBtPz3SB.js",
 			"/assets/related-pages-DK1FJfax.js",
 			"/assets/site-image-CzJKraK9.js",
@@ -54,19 +54,19 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/workspace/src/routes/contact.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/contact-BB98BjpZ.js",
-			"/assets/map-pin-VMcd80vJ.js",
+			"/assets/contact-DgRw62c1.js",
+			"/assets/map-pin-1ayBnTlX.js",
 			"/assets/section-DBtPz3SB.js",
 			"/assets/related-pages-DK1FJfax.js",
 			"/assets/site-image-CzJKraK9.js",
 			"/assets/json-ld-F5tmKDVf.js",
-			"/assets/visit-links-CysRQGtb.js"
+			"/assets/visit-links-CYc6r_Pd.js"
 		]
 	},
 	"/cookies": {
 		filePath: "/workspace/src/routes/cookies.tsx",
 		children: void 0,
-		preloads: ["/assets/cookies-84xXWU-l.js", "/assets/legal-page-CBgtjcwK.js"]
+		preloads: ["/assets/cookies-DTxBcMyl.js", "/assets/legal-page-CBgtjcwK.js"]
 	},
 	"/dr-shin": {
 		filePath: "/workspace/src/routes/dr-shin.tsx",
@@ -77,7 +77,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/workspace/src/routes/dr-yong-shin.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/dr-yong-shin-DiExxwG2.js",
+			"/assets/dr-yong-shin-C80SXApN.js",
 			"/assets/section-DBtPz3SB.js",
 			"/assets/related-pages-DK1FJfax.js",
 			"/assets/site-image-CzJKraK9.js",
@@ -88,7 +88,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/workspace/src/routes/insurance.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/insurance-JabxlOLt.js",
+			"/assets/insurance-dsgN4yI8.js",
 			"/assets/section-DBtPz3SB.js",
 			"/assets/related-pages-DK1FJfax.js",
 			"/assets/json-ld-F5tmKDVf.js"
@@ -103,7 +103,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/workspace/src/routes/meet-the-team.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/meet-the-team-CUSKbxJv.js",
+			"/assets/meet-the-team-BcYWPiFw.js",
 			"/assets/section-DBtPz3SB.js",
 			"/assets/related-pages-DK1FJfax.js",
 			"/assets/json-ld-F5tmKDVf.js"
@@ -113,13 +113,13 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/workspace/src/routes/new-patients.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/new-patients-RJTCIAAN.js",
+			"/assets/new-patients-Om7ia-Kr.js",
 			"/assets/section-DBtPz3SB.js",
 			"/assets/related-pages-DK1FJfax.js",
 			"/assets/json-ld-F5tmKDVf.js",
-			"/assets/visit-links-CysRQGtb.js",
+			"/assets/visit-links-CYc6r_Pd.js",
 			"/assets/form-consents-6pum_4v1.js",
-			"/assets/label-Cwf_Gvkl.js"
+			"/assets/label-BKVaXveR.js"
 		]
 	},
 	"/patients": {
@@ -131,10 +131,10 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/workspace/src/routes/privacy.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/privacy-CD9ULMpy.js",
+			"/assets/privacy-BmpHeoOq.js",
 			"/assets/legal-page-CBgtjcwK.js",
 			"/assets/form-consents-6pum_4v1.js",
-			"/assets/label-Cwf_Gvkl.js"
+			"/assets/label-BKVaXveR.js"
 		]
 	},
 	"/refunds": {
@@ -146,12 +146,12 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/workspace/src/routes/services.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/services-Dgzuedau.js",
+			"/assets/services-CzTfu6_s.js",
 			"/assets/section-DBtPz3SB.js",
 			"/assets/related-pages-DK1FJfax.js",
 			"/assets/site-image-CzJKraK9.js",
 			"/assets/json-ld-F5tmKDVf.js",
-			"/assets/label-Cwf_Gvkl.js"
+			"/assets/label-BKVaXveR.js"
 		]
 	},
 	"/team": {
@@ -168,10 +168,10 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/workspace/src/routes/unsubscribe.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/unsubscribe-JMd58g5d.js",
+			"/assets/unsubscribe-CHvm-k2z.js",
 			"/assets/legal-page-CBgtjcwK.js",
 			"/assets/form-consents-6pum_4v1.js",
-			"/assets/label-Cwf_Gvkl.js"
+			"/assets/label-BKVaXveR.js"
 		]
 	}
 } });

@@ -3,11 +3,11 @@ import { A as PHONE_TEL, k as PHONE_DISPLAY, u as EMAIL_DISPLAY } from "./seo-D9
 import { n as useForm, r as require_react, t as u } from "../_libs/@hookform/resolvers+[...].mjs";
 import { _ as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { n as boolean, o as object, r as email, s as string } from "../_libs/zod.mjs";
-import { n as Button } from "./router-U4XLDv2R.mjs";
+import { n as Button } from "./router-Bnfeg8n2.mjs";
 import { n as LegalPage, t as LegalH2 } from "./legal-page-C4bxpHdV.mjs";
 import { t as FormConsents } from "./form-consents-CNZAi0h7.mjs";
 import { n as Label, t as Input } from "./label-4CyyQLae.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/unsubscribe-VQpzKoFG.js
+//#region node_modules/.nitro/vite/services/ssr/assets/unsubscribe-Cu4Idl_P.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var schema = object({

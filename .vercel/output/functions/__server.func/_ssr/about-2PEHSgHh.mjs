@@ -1,12 +1,12 @@
 import { A as PHONE_TEL, L as breadcrumbLd, k as PHONE_DISPLAY } from "./seo-D9cIcZhO.mjs";
 import { v as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { _ as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
-import { n as Button } from "./router-U4XLDv2R.mjs";
+import { n as Button } from "./router-Bnfeg8n2.mjs";
 import { n as Section, t as PageHero } from "./section-BiHsIRLL.mjs";
 import { t as RelatedPages } from "./related-pages-DgOLigZb.mjs";
 import { t as SiteImage } from "./site-image-C0VeM_RJ.mjs";
 import { t as JsonLd } from "./json-ld-IR7igJk0.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/about-UgPzUj1-.js
+//#region node_modules/.nitro/vite/services/ssr/assets/about-2PEHSgHh.js
 var import_jsx_runtime = require_jsx_runtime();
 function About() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {

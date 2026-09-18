@@ -1,8 +1,8 @@
 import { v as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { _ as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
-import { r as CookieSettingsButton } from "./router-U4XLDv2R.mjs";
+import { r as CookieSettingsButton } from "./router-Bnfeg8n2.mjs";
 import { n as LegalPage, t as LegalH2 } from "./legal-page-C4bxpHdV.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/cookies-Cfbct1eb.js
+//#region node_modules/.nitro/vite/services/ssr/assets/cookies-BnR3kihA.js
 var import_jsx_runtime = require_jsx_runtime();
 function Cookies() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(LegalPage, {

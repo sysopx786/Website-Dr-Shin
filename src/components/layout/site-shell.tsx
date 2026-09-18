@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { CookieBanner } from "@/components/consent/cookie-banner";
+import { BottomChrome } from "@/components/layout/bottom-chrome";
 import { CrisisBanner } from "@/components/layout/crisis-banner";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
@@ -13,7 +13,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <SiteHeader />
       {children}
       <SiteFooter />
-      <CookieBanner />
+      <BottomChrome />
     </div>
   );
 }
