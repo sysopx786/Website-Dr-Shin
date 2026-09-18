@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/source-sans-3-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/source-sans-3-400-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/source-sans-3-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/source-sans-3-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/source-serif-4-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/source-serif-4-700.woff2") format("woff2");
+}
+
+@theme {
+  --font-sans: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --font-serif: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+
+  --color-paper: #f3eee4;
+  --color-paper-deep: #e7dfd1;
+  --color-surface: #fcfaf5;
+  --color-ink: #1b241f;
+  --color-ink-soft: #334039;
+  --color-muted: #44524b;
+  --color-forest: #1f4f40;
+  --color-forest-deep: #16382e;
+  --color-moss: #3c6b58;
+  --color-rule: #c9c0b0;
+  --color-crisis: #6f2d2d;
+  --color-crisis-fg: #fbf6f1;
+  --color-crisis-bg: #f3e4df;
+
+  --color-background: #f3eee4;
+  --color-foreground: #1b241f;
+  --color-primary: #1f4f40;
+  --color-primary-foreground: #fcfaf5;
+  --color-card: #fcfaf5;
+  --color-card-foreground: #1b241f;
+  --color-border: #c9c0b0;
+  --color-ring: #1f4f40;
+  --color-muted-foreground: #44524b;
+  --color-secondary: #e7dfd1;
+  --color-secondary-foreground: #1b241f;
+  --color-accent: #e7dfd1;
+  --color-accent-foreground: #1b241f;
+  --color-destructive: #6f2d2d;
+  --color-destructive-foreground: #fbf6f1;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+
+  --shadow-border:
+    0 0 0 1px rgba(27, 36, 31, 0.08),
+    0 1px 2px -1px rgba(27, 36, 31, 0.06),
+    0 10px 28px -16px rgba(27, 36, 31, 0.18);
+
+  --aspect-hero: 16/10;
+  --aspect-photo: 4/3;
+  --aspect-wide: 16/9;
+
+  --z-index-header: 40;
+  --z-index-overlay: 50;
+  --z-index-skip: 60;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    line-height: 1.55;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    color: var(--color-ink);
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  [id] {
+    scroll-margin-top: 7.5rem;
+  }
+
+  img {
+    outline: 1px solid color-mix(in oklab, var(--color-ink) 10%, transparent);
+    outline-offset: -1px;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-forest);
+    outline-offset: 3px;
+  }
+
+  .bg-ink :focus-visible,
+  .bg-forest-deep :focus-visible,
+  .bg-crisis :focus-visible {
+    outline-color: var(--color-paper);
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--color-forest) 22%, transparent);
+    color: var(--color-ink);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@utility letterhead-rule {
+  border-bottom: 1px solid var(--color-rule);
+  box-shadow: 0 2px 0 var(--color-forest);
+}

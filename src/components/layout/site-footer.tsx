@@ -1,0 +1,177 @@
+import { Link } from "@tanstack/react-router";
+import { BrandLogo } from "@/components/brand/brand-logo";
+import { CookieSettingsButton } from "@/components/consent/cookie-banner";
+import {
+  ADDRESS_LINES,
+  ADDRESS_ONE_LINE,
+  CRISIS_988,
+  DOXY_URL,
+  EMAIL_DISPLAY,
+  EMAIL_MAILTO,
+  EMERGENCY_911,
+  FAX_DISPLAY,
+  HOURS,
+  LEGAL_NAV,
+  LICENSE_PA,
+  NAV,
+  NPI_INDIVIDUAL,
+  PHONE_DISPLAY,
+  PHONE_TEL,
+  PORTAL_URL,
+  PRACTICE_LEGAL,
+  PRACTICE_NAME,
+} from "@/lib/site";
+
+export function SiteFooter() {
+  return (
+    <footer className="mt-auto border-t border-rule bg-forest-deep text-paper">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
+        <div className="md:col-span-2">
+          <div className="inline-flex rounded-md bg-paper p-3">
+            <BrandLogo className="h-12 sm:h-14" alt="" />
+          </div>
+          <p className="mt-4 font-serif text-2xl font-semibold">{PRACTICE_NAME}</p>
+          <p className="mt-4 max-w-md text-base leading-relaxed text-paper">
+            Psychiatric evaluation, therapy, and medication management in
+            Pottstown since 1988. A group practice for children, adults, and
+            older adults. In person and by telehealth.
+          </p>
+        </div>
+
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-wider text-paper">
+            Visit
+          </p>
+          <address className="mt-3 not-italic leading-relaxed">
+            {ADDRESS_LINES.map((line) => (
+              <span key={line} className="block">
+                {line}
+              </span>
+            ))}
+          </address>
+          <p className="mt-4">
+            <a className="font-semibold underline underline-offset-2" href={PHONE_TEL}>
+              {PHONE_DISPLAY}
+            </a>
+          </p>
+          <p className="text-paper">Fax {FAX_DISPLAY}</p>
+          <p className="mt-2">
+            <a className="underline underline-offset-2" href={EMAIL_MAILTO}>
+              {EMAIL_DISPLAY}
+            </a>
+          </p>
+        </div>
+
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-wider text-paper">
+            Hours
+          </p>
+          <ul className="mt-3 space-y-2">
+            {HOURS.map((row) => (
+              <li key={row.days}>
+                <span className="block font-medium">{row.days}</span>
+                <span className="text-paper">{row.time}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-3 text-sm text-paper">
+            Holiday hours vary. Please call to confirm.
+          </p>
+          <p className="mt-5 text-sm font-semibold uppercase tracking-wider text-paper">
+            Appointments
+          </p>
+          <ul className="mt-3 space-y-2">
+            <li>
+              <a
+                className="underline underline-offset-2"
+                href={DOXY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Click here at the time of your scheduled appointment
+              </a>
+            </li>
+            <li>
+              <a
+                className="underline underline-offset-2"
+                href={PORTAL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View appointment
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="border-t border-paper/15">
+        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-5 sm:px-6 lg:flex-row lg:items-center lg:justify-between">
+          <nav className="flex flex-wrap gap-x-5 gap-y-2" aria-label="Footer">
+            {NAV.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                className="min-h-11 inline-flex items-center underline-offset-4 hover:underline"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <p className="text-base">
+            Crisis:{" "}
+            <a className="font-semibold underline underline-offset-2" href={CRISIS_988}>
+              988
+            </a>
+            {" · "}
+            Emergency:{" "}
+            <a className="font-semibold underline underline-offset-2" href={EMERGENCY_911}>
+              911
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div className="border-t border-paper/15 bg-ink">
+        <div className="mx-auto max-w-6xl px-4 py-6 text-sm leading-relaxed text-paper sm:px-6">
+          <p>
+            {PRACTICE_LEGAL} · {ADDRESS_ONE_LINE} · {PHONE_DISPLAY} · Fax{" "}
+            {FAX_DISPLAY} · {EMAIL_DISPLAY} · NPI {NPI_INDIVIDUAL} · PA license{" "}
+            {LICENSE_PA}
+          </p>
+          <nav
+            className="mt-4 flex flex-wrap gap-x-5 gap-y-2"
+            aria-label="Legal"
+          >
+            {LEGAL_NAV.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                className="inline-flex min-h-11 items-center font-medium underline underline-offset-4"
+              >
+                {item.label}
+              </Link>
+            ))}
+            <Link
+              to="/privacy"
+              hash="deletion"
+              className="inline-flex min-h-11 items-center font-medium underline underline-offset-4"
+            >
+              Data requests
+            </Link>
+            <CookieSettingsButton className="inline-flex min-h-11 items-center font-medium underline underline-offset-4" />
+          </nav>
+          <p className="mt-4">
+            This website is for general information only and is not medical
+            advice. Do not send diagnoses, medication lists, or other protected
+            health information through this site. Full intake is completed
+            through the office after you call. 988 is a public crisis service,
+            not a clinician at this practice. We do not take payment on this
+            website.
+          </p>
+          <p className="mt-2">© {new Date().getFullYear()} {PRACTICE_NAME}</p>
+        </div>
+      </div>
+    </footer>
+  );
+}

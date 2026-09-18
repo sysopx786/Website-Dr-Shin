@@ -1,0 +1,1 @@
+import{J as e}from"./seo-B3IFoSKA.js";var t=e();function n({data:e}){return(0,t.jsx)(`script`,{type:`application/ld+json`,dangerouslySetInnerHTML:{__html:JSON.stringify(e)}})}export{n as t};

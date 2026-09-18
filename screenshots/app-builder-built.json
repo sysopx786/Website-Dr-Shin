@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Yong S. Shin MD & Associates | Pottstown Psychiatry",
+      "hasCanvas": false,
+      "bodyTextLen": 4346,
+      "bodyTextHash": "0574523166b832637658b2383933fa317c020e8e4d3feffcbc772c8683bb6a05",
+      "bodyTextPrefix": "Skip to main content Crisis support. Call or text 988 for the Su",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Yong S. Shin MD & Associates | Pottstown Psychiatry",
+      "hasCanvas": false,
+      "bodyTextLen": 4262,
+      "bodyTextHash": "9b378da39f1a3317dfa56d658d63f96d86607f2f37825e20fdadfb698ea10d0a",
+      "bodyTextPrefix": "Skip to main content Crisis support. Call or text 988 for the Su",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}
