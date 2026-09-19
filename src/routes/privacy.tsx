@@ -111,26 +111,17 @@ function Privacy() {
         </p>
       </section>
 
-      <section id="deletion">
-        <LegalH2>Data deletion requests</LegalH2>
-        <p className="mt-3">
-          This website does not keep a visitor database. The only website
-          choice stored on your device is the map preference, which you can
-          clear with Cookie settings or your browser. For medical records held
-          by the practice, call{" "}
-          <a className="font-semibold text-forest underline" href={PHONE_TEL}>
-            {PHONE_DISPLAY}
-          </a>
-          . Those requests follow health-privacy rules, not this website.
-        </p>
-      </section>
-
       <section>
         <LegalH2>How long information is kept</LegalH2>
         <p className="mt-3">
           Browser notes disappear when you leave the page unless you copy them.
           The map preference stays until you clear it with Cookie settings or
-          your browser. We do not keep a website database of visitors.
+          your browser. We do not keep a website database of visitors. For
+          medical records held by the practice, call{" "}
+          <a className="font-semibold text-forest underline" href={PHONE_TEL}>
+            {PHONE_DISPLAY}
+          </a>
+          .
         </p>
       </section>
 
