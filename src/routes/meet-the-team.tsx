@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/layout/page-hero";
 import { RelatedPages } from "@/components/layout/related-pages";
 import { Section } from "@/components/layout/section";
+import { SiteImage } from "@/components/media/site-image";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Button } from "@/components/ui/button";
 import { breadcrumbLd, pageHead } from "@/lib/seo";
@@ -39,14 +40,12 @@ function Team() {
               className="flex flex-col rounded-xl bg-surface p-6 shadow-border"
             >
               {person.photo ? (
-                <img
+                <SiteImage
                   src={person.photo}
                   alt={`${person.name}, ${person.credentials}`}
                   width={512}
                   height={512}
                   className="mb-4 aspect-square w-full rounded-lg bg-paper object-cover object-top"
-                  loading="lazy"
-                  decoding="async"
                 />
               ) : (
                 <p className="text-sm font-semibold uppercase tracking-wider text-muted">
