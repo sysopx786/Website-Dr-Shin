@@ -1,0 +1,28 @@
+name: Drop unsubscribe nav
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/drop-unsub-nav.yml"
+permissions:
+  contents: write
+jobs:
+  edit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Edit LEGAL_NAV and remove this workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path("src/lib/site.ts")
+          t = p.read_text()
+          t = t.replace('\n  { to: "/unsubscribe", label: "Unsubscribe" },', '')
+          p.write_text(t)
+          PY
+          rm -f .github/workflows/drop-unsub-nav.yml
+          git add src/lib/site.ts .github/workflows/drop-unsub-nav.yml
+          git commit -m "Remove Unsubscribe from footer legal nav" || true
+          git push
