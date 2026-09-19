@@ -64,7 +64,6 @@ export const LEGAL_NAV = [
   { to: "/refunds", label: "Refunds" },
   { to: "/cookies", label: "Cookies" },
   { to: "/licenses", label: "Licenses" },
-  { to: "/unsubscribe", label: "Unsubscribe" },
 ] as const;
 
 export const LEGAL_UPDATED = "September 18, 2026";
