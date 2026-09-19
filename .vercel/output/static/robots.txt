@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /__grok/
-Disallow: /auth/
-
-Sitemap: https://yongshinmd.com/sitemap.xml
