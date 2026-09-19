@@ -50,9 +50,9 @@ function Privacy() {
         </p>
         <ul className="mt-3 list-disc space-y-2 pl-6">
           <li>
-            Callback, data-request, and unsubscribe notes stay in your browser
-            unless you choose to call or open an email. They ask only for name,
-            phone or email, a time or request type, and two consents.
+            Callback and data-request notes stay in your browser unless you
+            choose to call or open an email. They ask only for name, phone or
+            email, a time or request type, and two consents.
           </li>
           <li>
             A first-party preference named ys-consent-v1 remembers whether you
@@ -100,17 +100,13 @@ function Privacy() {
       </section>
 
       <section id="email">
-        <LegalH2>Email and unsubscribe</LegalH2>
+        <LegalH2>Email</LegalH2>
         <p className="mt-3">
           This website does not run a newsletter and does not send marketing
           email. Appointment reminders, if any, come from the office or the
           RXNT patient portal — change those by calling us or using that
-          portal. To ask us not to use an address for non-care messages, use
-          the{" "}
-          <Link to="/unsubscribe" className="font-semibold text-forest underline">
-            unsubscribe page
-          </Link>{" "}
-          or call{" "}
+          portal. To ask the office not to use an address for non-care
+          messages, call{" "}
           <a className="font-semibold text-forest underline" href={PHONE_TEL}>
             {PHONE_DISPLAY}
           </a>
