@@ -20,7 +20,6 @@ export const PAGE_PATHS = [
   "/refunds",
   "/cookies",
   "/licenses",
-  "/unsubscribe",
 ] as const;
 
 export type PagePath = (typeof PAGE_PATHS)[number];
@@ -93,11 +92,6 @@ export const PAGE_SEO: Record<
     title: "Licenses | Yong S. Shin MD & Associates",
     description:
       "Font, logo, photograph, icon, and map licenses for the Yong S. Shin MD & Associates website.",
-  },
-  "/unsubscribe": {
-    title: "Unsubscribe | Yong S. Shin MD & Associates",
-    description:
-      "Stop non-care email from Yong S. Shin MD & Associates. This is not for appointment reminders. Do not send health details.",
   },
 };
 
