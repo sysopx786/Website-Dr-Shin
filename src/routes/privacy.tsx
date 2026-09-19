@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { DataRequestPanel } from "@/components/legal/data-request-panel";
 import { LegalH2, LegalPage } from "@/components/legal/legal-page";
 import { pageHead } from "@/lib/seo";
 import {
@@ -50,9 +49,9 @@ function Privacy() {
         </p>
         <ul className="mt-3 list-disc space-y-2 pl-6">
           <li>
-            Callback and data-request notes stay in your browser unless you
-            choose to call or open an email. They ask only for name, phone or
-            email, a time or request type, and two consents.
+            Callback notes stay in your browser unless you choose to call or
+            open an email. They ask only for name, phone, a time, and two
+            consents.
           </li>
           <li>
             A first-party preference named ys-consent-v1 remembers whether you
@@ -94,8 +93,6 @@ function Privacy() {
           but this website is not directed at children under 13 as a place to
           submit information. We do not knowingly collect information from
           children under 13 here. A parent or guardian should call for a minor.
-          The forms require you to confirm that you are 18 or a parent or
-          guardian. Children should not fill them in.
         </p>
       </section>
 
@@ -117,13 +114,15 @@ function Privacy() {
       <section id="deletion">
         <LegalH2>Data deletion requests</LegalH2>
         <p className="mt-3">
-          For anything stored only as a website note or cookie choice, use the
-          form below. For medical records held by the practice, call the office.
-          Those requests follow health-privacy rules, not this web form.
+          This website does not keep a visitor database. The only website
+          choice stored on your device is the map preference, which you can
+          clear with Cookie settings or your browser. For medical records held
+          by the practice, call{" "}
+          <a className="font-semibold text-forest underline" href={PHONE_TEL}>
+            {PHONE_DISPLAY}
+          </a>
+          . Those requests follow health-privacy rules, not this website.
         </p>
-        <div className="mt-6">
-          <DataRequestPanel />
-        </div>
       </section>
 
       <section>
