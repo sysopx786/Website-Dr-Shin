@@ -88,7 +88,7 @@ function NotFound() {
           {PHONE_DISPLAY}
         </a>
         . Policies are linked in the footer: Privacy, Terms of Service,
-        Refunds, Cookies, Licenses, and Unsubscribe.
+        Refunds, Cookies, and Licenses.
       </p>
       <p className="mt-8">
         <Link
