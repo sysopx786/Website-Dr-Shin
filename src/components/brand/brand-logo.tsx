@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { assetUrl, cn } from "@/lib/utils";
 
 export function BrandLogo({
   className,
@@ -9,7 +9,7 @@ export function BrandLogo({
 }) {
   return (
     <img
-      src="/images/logo.png"
+      src={assetUrl("/images/logo.png")}
       width={312}
       height={106}
       alt={alt}

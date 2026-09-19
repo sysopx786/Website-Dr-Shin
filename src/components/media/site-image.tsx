@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { assetUrl, cn } from "@/lib/utils";
 
 type SiteImageProps = {
   src: string;
@@ -19,13 +19,14 @@ export function SiteImage({
   priority = false,
   sizes = "(min-width: 1024px) 560px, 100vw",
 }: SiteImageProps) {
-  const webp = src.replace(/\.jpe?g$/i, ".webp");
+  const resolved = assetUrl(src);
+  const webp = resolved.replace(/\.jpe?g$/i, ".webp");
 
   return (
     <picture>
       <source type="image/webp" srcSet={webp} sizes={sizes} />
       <img
-        src={src}
+        src={resolved}
         alt={alt}
         width={width}
         height={height}
