@@ -1,62 +1,56 @@
 # Yong S. Shin MD & Associates
 
+**Preview (live website):** [https://sysopx786.github.io/Website-Dr-Shin/](https://sysopx786.github.io/Website-Dr-Shin/)
+
+**GitHub folder:** [https://github.com/sysopx786/Website-Dr-Shin](https://github.com/sysopx786/Website-Dr-Shin)
+
+[![Live preview](https://img.shields.io/badge/Preview-Open_live_website-2F5D50?style=for-the-badge)](https://sysopx786.github.io/Website-Dr-Shin/)
+[![GitHub](https://img.shields.io/badge/GitHub-Website--Dr--Shin-181717?style=for-the-badge&logo=github)](https://github.com/sysopx786/Website-Dr-Shin)
+
+Open the **live preview** to see the public website. This GitHub folder is the source. Full list: [LINKS.md](LINKS.md).
+
+![Home page preview](screenshots/home-logo.png)
+
 Group psychiatric practice in Pottstown, Pennsylvania, since 1988. Evaluation, therapy, medication management, and specialty care — in the office and by telehealth.
 
-## Preview
-
-**Live preview:** [https://sysopx786.github.io/Website-Dr-Shin/](https://sysopx786.github.io/Website-Dr-Shin/)
-
-**GitHub repo:** [https://github.com/sysopx786/Website-Dr-Shin](https://github.com/sysopx786/Website-Dr-Shin)
-
-Open the **live preview** to see the public website. This GitHub folder is the source.
-
 ---
 
-## Preview & GitHub
+## Links
 
-| | |
-|---|---|
-| **Live preview** | [https://sysopx786.github.io/Website-Dr-Shin/](https://sysopx786.github.io/Website-Dr-Shin/) |
-| **This repo** | [https://github.com/sysopx786/Website-Dr-Shin](https://github.com/sysopx786/Website-Dr-Shin) |
-| **GitHub Pages** | [Pages settings](https://github.com/sysopx786/Website-Dr-Shin/settings/pages) |
-| **Pages deploys** | [Actions](https://github.com/sysopx786/Website-Dr-Shin/actions) |
-| **Sitemap** | [sitemap.xml](https://sysopx786.github.io/Website-Dr-Shin/sitemap.xml) |
-| **robots.txt** | [robots.txt](https://sysopx786.github.io/Website-Dr-Shin/robots.txt) |
+### Preview & GitHub
 
----
+- **Live preview:** [https://sysopx786.github.io/Website-Dr-Shin/](https://sysopx786.github.io/Website-Dr-Shin/)
+- **This GitHub folder:** [https://github.com/sysopx786/Website-Dr-Shin](https://github.com/sysopx786/Website-Dr-Shin)
+- **All relevant links:** [LINKS.md](https://github.com/sysopx786/Website-Dr-Shin/blob/main/LINKS.md)
+- **GitHub Pages settings:** [Settings → Pages](https://github.com/sysopx786/Website-Dr-Shin/settings/pages)
+- **Pages deploys:** [Actions](https://github.com/sysopx786/Website-Dr-Shin/actions)
+- **Sitemap:** [sitemap.xml](https://sysopx786.github.io/Website-Dr-Shin/sitemap.xml)
+- **robots.txt:** [robots.txt](https://sysopx786.github.io/Website-Dr-Shin/robots.txt)
 
-## Practice
+### Practice
 
-| | |
-|---|---|
-| **Name** | Yong S. Shin MD & Associates |
-| **Legal name** | Yong Shik Shin MD and Associates LLC |
-| **Address** | 1630 E. High Street, Building 4, Pottstown, PA 19464 |
-| **Phone** | [(610) 327-1631](tel:+16103271631) |
-| **Fax** | (610) 327-1199 |
-| **Email** | [info@yongshinmd.net](mailto:info@yongshinmd.net) |
-| **Hours** | Mon–Thu 9:00 a.m.–8:00 p.m. · Fri 9:00 a.m.–4:00 p.m. · Sat–Sun closed |
-| **Directions** | [Google Maps](https://www.google.com/maps/search/?api=1&query=1630+E+High+Street+Building+4+Pottstown+PA+19464) |
-| **Map** | [OpenStreetMap](https://www.openstreetmap.org/?mlat=40.2454&mlon=-75.611#map=17/40.2454/-75.611) |
-| **NPI** | 1881623338 |
-| **PA license** | MD034368L |
-| **Crisis** | [988](tel:988) · Emergency [911](tel:911) |
+- **Name:** Yong S. Shin MD & Associates
+- **Legal name:** Yong Shik Shin MD and Associates LLC
+- **Address:** 1630 E. High Street, Building 4, Pottstown, PA 19464
+- **Phone:** [(610) 327-1631](tel:+16103271631)
+- **Fax:** (610) 327-1199
+- **Email:** [info@yongshinmd.net](mailto:info@yongshinmd.net)
+- **Hours:** Mon–Thu 9:00 a.m.–8:00 p.m. · Fri 9:00 a.m.–4:00 p.m. · Sat–Sun closed
+- **Directions:** [Google Maps](https://www.google.com/maps/search/?api=1&query=1630+E+High+Street+Building+4+Pottstown+PA+19464)
+- **Map:** [OpenStreetMap](https://www.openstreetmap.org/?mlat=40.2454&mlon=-75.611#map=17/40.2454/-75.611)
+- **NPI:** 1881623338
+- **PA license:** MD034368L
+- **Crisis:** [988](tel:988) · Emergency [911](tel:911)
 
----
+### Appointments
 
-## Appointments
-
-| | |
-|---|---|
-| **Schedule appointment** | Call [(610) 327-1631](tel:+16103271631) |
-| **Join a video visit** | [Doxy.me — click here at the time of your scheduled appointment](https://doxy.me/DrYShin) |
-| **View appointment** | [RXNT patient portal](https://app2.rxnt.com/phr/#) |
+- **Schedule appointment:** Call [(610) 327-1631](tel:+16103271631)
+- **Join a video visit:** [Doxy.me — click here at the time of your scheduled appointment](https://doxy.me/DrYShin)
+- **View appointment:** [RXNT patient portal](https://app2.rxnt.com/phr/#)
 
 Do not send diagnoses, medications, or other health details through this website or ordinary email.
 
----
-
-## Pages on the live preview
+### Pages on the live preview
 
 | Section | Link |
 |---|---|
