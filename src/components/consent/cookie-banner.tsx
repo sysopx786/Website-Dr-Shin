@@ -1,5 +1,6 @@
 import { useEffect, useRef, useSyncExternalStore } from "react";
 import { Link } from "@tanstack/react-router";
+import { useLocale } from "@/lib/i18n/locale";
 import {
   CONSENT_FOCUS_EVENT,
   openCookieSettings,
@@ -12,6 +13,7 @@ const choiceClass =
   "inline-flex min-h-12 items-center justify-center rounded-md border-2 border-paper bg-transparent px-3 text-base font-semibold text-paper hover:bg-paper/15 sm:px-5";
 
 export function CookieBanner({ forceOpen = false }: { forceOpen?: boolean }) {
+  const { t } = useLocale();
   const record = useSyncExternalStore(
     subscribeConsent,
     readConsent,
@@ -42,16 +44,15 @@ export function CookieBanner({ forceOpen = false }: { forceOpen?: boolean }) {
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3 sm:px-6 lg:flex-row lg:items-end lg:gap-8">
         <div className="min-w-0 flex-1">
           <p id="cookie-banner-title" className="font-serif text-xl font-semibold">
-            Cookies on this site
+            {t("cookieTitle")}
           </p>
           <p id="cookie-banner-copy" className="mt-1 text-base leading-relaxed text-paper">
-            We do not use advertising or analytics cookies. Two equal choices:
-            essential only, or allow the office map. Nothing is pre-checked.{" "}
+            {t("cookieCopy")}{" "}
             <Link
               to="/cookies"
               className="font-semibold underline decoration-2 underline-offset-4"
             >
-              Cookie policy
+              {t("cookiePolicy")}
             </Link>
           </p>
         </div>
@@ -61,14 +62,14 @@ export function CookieBanner({ forceOpen = false }: { forceOpen?: boolean }) {
             className={choiceClass}
             onClick={() => writeConsent("essential")}
           >
-            Essential only
+            {t("essentialOnly")}
           </button>
           <button
             type="button"
             className={choiceClass}
             onClick={() => writeConsent("map")}
           >
-            Allow the map
+            {t("allowMap")}
           </button>
         </div>
       </div>
@@ -77,6 +78,7 @@ export function CookieBanner({ forceOpen = false }: { forceOpen?: boolean }) {
 }
 
 export function CookieSettingsButton({ className }: { className?: string }) {
+  const { t } = useLocale();
   return (
     <button
       type="button"
@@ -85,7 +87,7 @@ export function CookieSettingsButton({ className }: { className?: string }) {
         openCookieSettings();
       }}
     >
-      Cookie settings
+      {t("cookieSettings")}
     </button>
   );
 }

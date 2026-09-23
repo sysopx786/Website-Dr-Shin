@@ -1,4 +1,5 @@
 import { CalendarDays, Video } from "lucide-react";
+import { useLocale } from "@/lib/i18n/locale";
 import { DOXY_URL, PORTAL_URL } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -8,6 +9,7 @@ type VisitLinksProps = {
 };
 
 export function VisitLinks({ className, tone = "paper" }: VisitLinksProps) {
+  const { t } = useLocale();
   const onForest = tone === "forest";
 
   return (
@@ -24,14 +26,13 @@ export function VisitLinks({ className, tone = "paper" }: VisitLinksProps) {
             onForest ? "text-paper/75" : "text-forest",
           )}
         >
-          Telehealth
+          {t("telehealth")}
         </p>
         <h3 className={cn("mt-2 font-serif text-2xl", onForest ? "text-paper" : "text-ink")}>
-          Your scheduled visit
+          {t("scheduledVisit")}
         </h3>
         <p className={cn("mt-3 flex-1 leading-relaxed", onForest ? "text-paper/90" : "text-ink-soft")}>
-          Use this Doxy.me room only at the time of a video appointment the
-          office has already booked.
+          {t("doxyHelp")}
         </p>
         <a
           href={DOXY_URL}
@@ -45,7 +46,7 @@ export function VisitLinks({ className, tone = "paper" }: VisitLinksProps) {
           )}
         >
           <Video className="size-5 shrink-0" aria-hidden="true" />
-          Click here at the time of your scheduled appointment
+          {t("doxyCta")}
         </a>
       </article>
 
@@ -61,14 +62,13 @@ export function VisitLinks({ className, tone = "paper" }: VisitLinksProps) {
             onForest ? "text-paper/75" : "text-forest",
           )}
         >
-          Patient portal
+          {t("patientPortal")}
         </p>
         <h3 className={cn("mt-2 font-serif text-2xl", onForest ? "text-paper" : "text-ink")}>
-          Appointments
+          {t("appointmentsHeading")}
         </h3>
         <p className={cn("mt-3 flex-1 leading-relaxed", onForest ? "text-paper/90" : "text-ink-soft")}>
-          Opens the RXNT patient portal so you can view an existing appointment.
-          Sign-in happens there, not on this website.
+          {t("portalHelp")}
         </p>
         <a
           href={PORTAL_URL}
@@ -82,7 +82,7 @@ export function VisitLinks({ className, tone = "paper" }: VisitLinksProps) {
           )}
         >
           <CalendarDays className="size-5 shrink-0" aria-hidden="true" />
-          View appointment
+          {t("viewAppointment")}
         </a>
       </article>
     </div>
