@@ -3,4 +3,9 @@ Allow: /
 Disallow: /__grok/
 Disallow: /auth/
 
+# Retired slugs redirect to current pages. Do not index the stubs.
+Disallow: /team
+Disallow: /dr-shin
+Disallow: /patients
+
 Sitemap: https://yongshinmd.com/sitemap.xml
