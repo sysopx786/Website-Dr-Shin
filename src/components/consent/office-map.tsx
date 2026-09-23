@@ -1,9 +1,11 @@
 import { useSyncExternalStore } from "react";
 import { readConsent, subscribeConsent, writeConsent } from "@/lib/consent";
+import { useLocale } from "@/lib/i18n/locale";
 import { ADDRESS_ONE_LINE, OSM_EMBED, OSM_LINK } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 
 export function OfficeMap() {
+  const { t } = useLocale();
   const record = useSyncExternalStore(
     subscribeConsent,
     readConsent,
@@ -23,12 +25,9 @@ export function OfficeMap() {
         />
       ) : (
         <div className="flex h-80 min-h-80 flex-col items-start justify-center gap-4 bg-paper-deep px-6 py-8">
-          <p className="max-w-md text-lg text-ink-soft">
-            The map is off until you allow OpenStreetMap, a third-party map
-            service. You can still open a larger map in a new tab.
-          </p>
+          <p className="max-w-md text-lg text-ink-soft">{t("mapOff")}</p>
           <Button type="button" onClick={() => writeConsent("map")}>
-            Load the OpenStreetMap embed
+            {t("loadMap")}
           </Button>
         </div>
       )}
@@ -39,7 +38,7 @@ export function OfficeMap() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Open a larger map
+          {t("openLargerMap")}
         </a>
       </p>
     </div>
