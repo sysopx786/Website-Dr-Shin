@@ -1,0 +1,96 @@
+import {
+  EMAIL_DISPLAY,
+  LICENSE_PA,
+  NPI_INDIVIDUAL,
+  OSM_LINK,
+  PHYSICIAN_LEGAL_NAME,
+  PRACTICE_LEGAL,
+  PRACTICE_NAME,
+} from "@/lib/site-constants";
+
+export const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://yongshinmd.com/#website",
+      url: "https://yongshinmd.com",
+      name: PRACTICE_NAME,
+      inLanguage: "en-US",
+      publisher: { "@id": "https://yongshinmd.com/#clinic" },
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://yongshinmd.com/#clinic",
+      name: PRACTICE_NAME,
+      legalName: PRACTICE_LEGAL,
+      url: "https://yongshinmd.com",
+      image: "https://yongshinmd.com/og.jpg",
+      logo: "https://yongshinmd.com/images/logo.png",
+      email: EMAIL_DISPLAY,
+      telephone: "+1-610-327-1631",
+      faxNumber: "+1-610-327-1199",
+      medicalSpecialty: ["Psychiatry", "GeriatricPsychiatry"],
+      hasMap: OSM_LINK,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "1630 E. High Street, Building 4",
+        addressLocality: "Pottstown",
+        addressRegion: "PA",
+        postalCode: "19464",
+        addressCountry: "US",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 40.2454,
+        longitude: -75.611,
+      },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
+          opens: "09:00",
+          closes: "20:00",
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: "Friday",
+          opens: "09:00",
+          closes: "16:00",
+        },
+      ],
+      availableLanguage: ["English", "Korean", "Spanish"],
+      employee: { "@id": "https://yongshinmd.com/#physician" },
+    },
+    {
+      "@type": "Physician",
+      "@id": "https://yongshinmd.com/#physician",
+      name: PHYSICIAN_LEGAL_NAME,
+      url: "https://yongshinmd.com/dr-yong-shin",
+      image: "https://yongshinmd.com/images/dr-shin.jpg",
+      telephone: "+1-610-327-1631",
+      medicalSpecialty: "GeriatricPsychiatry",
+      identifier: [
+        {
+          "@type": "PropertyValue",
+          propertyID: "NPI",
+          value: NPI_INDIVIDUAL,
+        },
+        {
+          "@type": "PropertyValue",
+          propertyID: "Pennsylvania medical license",
+          value: LICENSE_PA,
+        },
+      ],
+      worksFor: { "@id": "https://yongshinmd.com/#clinic" },
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "1630 E. High Street, Building 4",
+        addressLocality: "Pottstown",
+        addressRegion: "PA",
+        postalCode: "19464",
+        addressCountry: "US",
+      },
+    },
+  ],
+};
