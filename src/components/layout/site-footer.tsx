@@ -1,6 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { BrandLogo } from "@/components/brand/brand-logo";
 import { CookieSettingsButton } from "@/components/consent/cookie-banner";
+import { LanguageToggle } from "@/components/layout/language-toggle";
+import { useLocale } from "@/lib/i18n/locale";
+import { LEGAL_LABEL_KEY, NAV_LABEL_KEY, type MessageKey } from "@/lib/i18n/messages";
 import {
   ADDRESS_LINES,
   ADDRESS_ONE_LINE,
@@ -10,7 +13,6 @@ import {
   EMAIL_MAILTO,
   EMERGENCY_911,
   FAX_DISPLAY,
-  HOURS,
   LEGAL_NAV,
   LICENSE_PA,
   NAV,
@@ -23,6 +25,13 @@ import {
 } from "@/lib/site";
 
 export function SiteFooter() {
+  const { t } = useLocale();
+  const hours = [
+    { days: t("hoursMonThu"), time: t("hoursMonThuTime") },
+    { days: t("hoursFri"), time: t("hoursFriTime") },
+    { days: t("hoursWeekend"), time: t("hoursClosed") },
+  ];
+
   return (
     <footer className="mt-auto border-t border-rule bg-forest-deep text-paper">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
@@ -32,15 +41,14 @@ export function SiteFooter() {
           </div>
           <p className="mt-4 font-serif text-2xl font-semibold">{PRACTICE_NAME}</p>
           <p className="mt-4 max-w-md text-base leading-relaxed text-paper">
-            Psychiatric evaluation, therapy, and medication management in
-            Pottstown since 1988. A group practice for children, adults, and
-            older adults. In person and by telehealth.
+            {t("footerBlurb")}
           </p>
+          <LanguageToggle tone="footer" className="mt-5" />
         </div>
 
         <div>
           <p className="text-sm font-semibold uppercase tracking-wider text-paper">
-            Visit
+            {t("visit")}
           </p>
           <address className="mt-3 not-italic leading-relaxed">
             {ADDRESS_LINES.map((line) => (
@@ -64,21 +72,19 @@ export function SiteFooter() {
 
         <div>
           <p className="text-sm font-semibold uppercase tracking-wider text-paper">
-            Hours
+            {t("hours")}
           </p>
           <ul className="mt-3 space-y-2">
-            {HOURS.map((row) => (
+            {hours.map((row) => (
               <li key={row.days}>
                 <span className="block font-medium">{row.days}</span>
                 <span className="text-paper">{row.time}</span>
               </li>
             ))}
           </ul>
-          <p className="mt-3 text-sm text-paper">
-            Holiday hours vary. Please call to confirm.
-          </p>
+          <p className="mt-3 text-sm text-paper">{t("holidayHours")}</p>
           <p className="mt-5 text-sm font-semibold uppercase tracking-wider text-paper">
-            Appointments
+            {t("appointments")}
           </p>
           <ul className="mt-3 space-y-2">
             <li>
@@ -88,7 +94,7 @@ export function SiteFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Click here at the time of your scheduled appointment
+                {t("doxyCta")}
               </a>
             </li>
             <li>
@@ -98,7 +104,7 @@ export function SiteFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View appointment
+                {t("viewAppointment")}
               </a>
             </li>
           </ul>
@@ -114,17 +120,17 @@ export function SiteFooter() {
                 to={item.to}
                 className="min-h-11 inline-flex items-center underline-offset-4 hover:underline"
               >
-                {item.label}
+                {t(NAV_LABEL_KEY[item.to] as MessageKey)}
               </Link>
             ))}
           </nav>
           <p className="text-base">
-            Crisis:{" "}
+            {t("crisisShort")}:{" "}
             <a className="font-semibold underline underline-offset-2" href={CRISIS_988}>
               988
             </a>
-            {" · "}
-            Emergency:{" "}
+            {" \u00b7 "}
+            {t("emergencyShort")}:{" "}
             <a className="font-semibold underline underline-offset-2" href={EMERGENCY_911}>
               911
             </a>
@@ -135,8 +141,8 @@ export function SiteFooter() {
       <div className="border-t border-paper/15 bg-ink">
         <div className="mx-auto max-w-6xl px-4 py-6 text-sm leading-relaxed text-paper sm:px-6">
           <p>
-            {PRACTICE_LEGAL} · {ADDRESS_ONE_LINE} · {PHONE_DISPLAY} · Fax{" "}
-            {FAX_DISPLAY} · {EMAIL_DISPLAY} · NPI {NPI_INDIVIDUAL} · PA license{" "}
+            {PRACTICE_LEGAL} \u00b7 {ADDRESS_ONE_LINE} \u00b7 {PHONE_DISPLAY} \u00b7 Fax{" "}
+            {FAX_DISPLAY} \u00b7 {EMAIL_DISPLAY} \u00b7 NPI {NPI_INDIVIDUAL} \u00b7 PA license{" "}
             {LICENSE_PA}
           </p>
           <nav
@@ -149,7 +155,7 @@ export function SiteFooter() {
                 to={item.to}
                 className="inline-flex min-h-11 items-center font-medium underline underline-offset-4"
               >
-                {item.label}
+                {t(LEGAL_LABEL_KEY[item.to] as MessageKey)}
               </Link>
             ))}
             <Link
@@ -157,19 +163,12 @@ export function SiteFooter() {
               hash="deletion"
               className="inline-flex min-h-11 items-center font-medium underline underline-offset-4"
             >
-              Data requests
+              {t("dataRequests")}
             </Link>
             <CookieSettingsButton className="inline-flex min-h-11 items-center font-medium underline underline-offset-4" />
           </nav>
-          <p className="mt-4">
-            This website is for general information only and is not medical
-            advice. Do not send diagnoses, medication lists, or other protected
-            health information through this site. Full intake is completed
-            through the office after you call. 988 is a public crisis service,
-            not a clinician at this practice. We do not take payment on this
-            website.
-          </p>
-          <p className="mt-2">© {new Date().getFullYear()} {PRACTICE_NAME}</p>
+          <p className="mt-4">{t("footerDisclaimer")}</p>
+          <p className="mt-2">\u00a9 {new Date().getFullYear()} {PRACTICE_NAME}</p>
         </div>
       </div>
     </footer>
