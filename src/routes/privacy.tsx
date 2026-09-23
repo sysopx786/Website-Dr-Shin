@@ -3,6 +3,7 @@ import { LegalH2, LegalPage } from "@/components/legal/legal-page";
 import { pageHead } from "@/lib/seo";
 import {
   ADDRESS_ONE_LINE,
+  DATA_REQUEST_MAILTO,
   EMAIL_DISPLAY,
   PHONE_DISPLAY,
   PHONE_TEL,
@@ -134,6 +135,32 @@ function Privacy() {
             cookie policy
           </Link>
           .
+        </p>
+      </section>
+
+      <section id="deletion">
+        <LegalH2>Website data requests</LegalH2>
+        <p className="mt-3">
+          This public website does not keep a visitor database. Callback notes
+          stay in your browser. The only first-party record we may have from
+          these pages is the map-preference value stored on your device.
+        </p>
+        <p className="mt-3">
+          If you want us to confirm whether this website holds any information
+          about you, or to delete website notes if they exist, email{" "}
+          <a
+            className="font-semibold text-forest underline"
+            href={DATA_REQUEST_MAILTO}
+          >
+            {EMAIL_DISPLAY}
+          </a>{" "}
+          with the subject “Website data request,” or call{" "}
+          <a className="font-semibold text-forest underline" href={PHONE_TEL}>
+            {PHONE_DISPLAY}
+          </a>
+          . Do not include diagnoses, medications, or other health details in
+          that message. Medical-record requests are a separate office process —
+          ask for the Notice of Privacy Practices when you become a patient.
         </p>
       </section>
 
