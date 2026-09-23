@@ -7,13 +7,14 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { extraMessages, type ExtraMessageKey } from "@/lib/i18n/extra-messages";
 import { messages, type MessageKey as ChromeKey } from "@/lib/i18n/messages";
 import {
   pageMessages,
   type PageMessageKey,
 } from "@/lib/i18n/page-messages";
 
-export type MessageKey = ChromeKey | PageMessageKey;
+export type MessageKey = ChromeKey | PageMessageKey | ExtraMessageKey;
 
 export type Locale = "en" | "es";
 
@@ -58,13 +59,17 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const t = useCallback((key: MessageKey) => {
+    const extra = extraMessages[locale] as Record<string, string>;
     const pages = pageMessages[locale] as Record<string, string>;
     const chrome = messages[locale] as Record<string, string>;
     return (
+      extra[key] ??
       pages[key] ??
       chrome[key] ??
+      extraMessages.en[key as ExtraMessageKey] ??
       pageMessages.en[key as PageMessageKey] ??
-      messages.en[key as ChromeKey]
+      messages.en[key as ChromeKey] ??
+      ""
     );
   }, [locale]);
 
