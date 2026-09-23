@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -7,74 +7,58 @@ import { FormConsents } from "@/components/consent/form-consents";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useLocale } from "@/lib/i18n/locale";
 import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
 
-const schema = z.object({
-  name: z.string().trim().min(2, "Please enter your name."),
-  phone: z
-    .string()
-    .trim()
-    .min(10, "Please enter a phone number with area code."),
-  preferredTime: z.enum(["morning", "afternoon", "evening"]),
-  adult: z.boolean().refine((value) => value, {
-    message: "Please confirm you are 18 or a parent or guardian.",
-  }),
-  privacy: z.boolean().refine((value) => value, {
-    message: "Please agree to the privacy policy.",
-  }),
-});
-
-type FormValues = z.infer<typeof schema>;
-
-const TIMES = [
-  { value: "morning", label: "Morning" },
-  { value: "afternoon", label: "Afternoon" },
-  { value: "evening", label: "Evening" },
-] as const;
+type FormValues = {
+  name: string;
+  phone: string;
+  preferredTime: "morning" | "afternoon" | "evening";
+  adult: boolean;
+  privacy: boolean;
+};
 
 export function CallbackPanel() {
+  const { t } = useLocale();
   const [done, setDone] = useState<FormValues | null>(null);
+  const schema = useMemo(
+    () =>
+      z.object({
+        name: z.string().trim().min(2, t("errName")),
+        phone: z.string().trim().min(10, t("errPhone")),
+        preferredTime: z.enum(["morning", "afternoon", "evening"]),
+        adult: z.boolean().refine((value) => value, { message: t("errAdult") }),
+        privacy: z.boolean().refine((value) => value, { message: t("errPrivacy") }),
+      }),
+    [t],
+  );
   const form = useForm<FormValues>({
     resolver: zodResolver(schema),
-    defaultValues: {
-      name: "",
-      phone: "",
-      preferredTime: "morning",
-      adult: false,
-      privacy: false,
-    },
+    defaultValues: { name: "", phone: "", preferredTime: "morning", adult: false, privacy: false },
   });
-
-  function onSubmit(values: FormValues) {
-    setDone(values);
-  }
-
+  const times = [
+    { value: "morning" as const, label: t("morning") },
+    { value: "afternoon" as const, label: t("afternoon") },
+    { value: "evening" as const, label: t("evening") },
+  ];
   if (done) {
+    const timeLabel = times.find((item) => item.value === done.preferredTime)?.label ?? done.preferredTime;
     return (
       <div className="rounded-xl bg-surface p-6 shadow-border sm:p-8">
-        <h2 className="font-serif text-2xl">Have this ready when you call</h2>
-        <p className="mt-3 text-ink-soft">
-          This website cannot send messages to our office. Please call so we can
-          complete your request. Do not add medical details on this page.
-        </p>
+        <h2 className="font-serif text-2xl">{t("haveReady")}</h2>
+        <p className="mt-3 text-ink-soft">{t("callbackDone")}</p>
         <dl className="mt-6 space-y-3">
           <div>
-            <dt className="text-sm font-semibold uppercase tracking-wider text-muted">
-              Name
-            </dt>
+            <dt className="text-sm font-semibold uppercase tracking-wider text-muted">{t("nameLabel")}</dt>
             <dd>{done.name}</dd>
           </div>
           <div>
-            <dt className="text-sm font-semibold uppercase tracking-wider text-muted">
-              Phone
-            </dt>
+            <dt className="text-sm font-semibold uppercase tracking-wider text-muted">{t("phoneLabel")}</dt>
             <dd>{done.phone}</dd>
           </div>
           <div>
-            <dt className="text-sm font-semibold uppercase tracking-wider text-muted">
-              Preferred time
-            </dt>
-            <dd className="capitalize">{done.preferredTime}</dd>
+            <dt className="text-sm font-semibold uppercase tracking-wider text-muted">{t("preferredTime")}</dt>
+            <dd>{timeLabel}</dd>
           </div>
         </dl>
         <a
@@ -82,81 +66,30 @@ export function CallbackPanel() {
           className="mt-6 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-md bg-forest text-lg font-semibold text-paper hover:bg-forest-deep"
         >
           <Phone className="size-5" aria-hidden="true" />
-          Call {PHONE_DISPLAY}
+          {t("call")} {PHONE_DISPLAY}
         </a>
       </div>
     );
   }
-
   return (
-    <form
-      onSubmit={form.handleSubmit(onSubmit)}
-      className="rounded-xl bg-surface p-6 shadow-border sm:p-8"
-      noValidate
-    >
-      <h2 className="font-serif text-2xl">Request a callback</h2>
-      <p className="mt-2 text-ink-soft">
-        Name, phone, and a preferred time only. This form does not transmit
-        anything to our office — it prepares a short note, then asks you to
-        call. Do not include diagnoses, medications, or insurance ID numbers,
-        and do not email those details to the office.
-      </p>
-
+    <form onSubmit={form.handleSubmit((values) => setDone(values))} className="rounded-xl bg-surface p-6 shadow-border sm:p-8" noValidate>
+      <h2 className="font-serif text-2xl">{t("callbackTitle")}</h2>
+      <p className="mt-2 text-ink-soft">{t("callbackLead")}</p>
       <div className="mt-6 space-y-5">
         <div className="space-y-2">
-          <Label htmlFor="callback-name">Your name</Label>
-          <Input
-            id="callback-name"
-            autoComplete="name"
-            {...form.register("name")}
-            aria-invalid={Boolean(form.formState.errors.name)}
-            aria-describedby={
-              form.formState.errors.name ? "callback-name-error" : undefined
-            }
-          />
-          {form.formState.errors.name ? (
-            <p id="callback-name-error" className="text-base text-crisis" role="alert">
-              {form.formState.errors.name.message}
-            </p>
-          ) : null}
+          <Label htmlFor="callback-name">{t("yourName")}</Label>
+          <Input id="callback-name" autoComplete="name" {...form.register("name")} />
         </div>
-
         <div className="space-y-2">
-          <Label htmlFor="callback-phone">Phone number</Label>
-          <Input
-            id="callback-phone"
-            type="tel"
-            autoComplete="tel"
-            inputMode="tel"
-            {...form.register("phone")}
-            aria-invalid={Boolean(form.formState.errors.phone)}
-            aria-describedby={
-              form.formState.errors.phone ? "callback-phone-error" : undefined
-            }
-          />
-          {form.formState.errors.phone ? (
-            <p id="callback-phone-error" className="text-base text-crisis" role="alert">
-              {form.formState.errors.phone.message}
-            </p>
-          ) : null}
+          <Label htmlFor="callback-phone">{t("phoneNumber")}</Label>
+          <Input id="callback-phone" type="tel" autoComplete="tel" inputMode="tel" {...form.register("phone")} />
         </div>
-
         <fieldset className="space-y-3">
-          <legend className="text-base font-medium text-ink">
-            Preferred callback time
-          </legend>
+          <legend className="text-base font-medium text-ink">{t("preferredTime")}</legend>
           <div className="grid gap-2 sm:grid-cols-3">
-            {TIMES.map((option) => (
-              <label
-                key={option.value}
-                className="flex min-h-12 cursor-pointer items-center gap-3 rounded-md border border-rule bg-paper px-4 has-[:checked]:border-forest has-[:checked]:bg-paper-deep"
-              >
-                <input
-                  type="radio"
-                  value={option.value}
-                  className="size-5 accent-forest"
-                  {...form.register("preferredTime")}
-                />
+            {times.map((option) => (
+              <label key={option.value} className="flex min-h-12 cursor-pointer items-center gap-3 rounded-md border border-rule bg-paper px-4 has-[:checked]:border-forest has-[:checked]:bg-paper-deep">
+                <input type="radio" value={option.value} className="size-5 accent-forest" {...form.register("preferredTime")} />
                 {option.label}
               </label>
             ))}
@@ -169,10 +102,7 @@ export function CallbackPanel() {
           errors={form.formState.errors}
         />
       </div>
-
-      <Button type="submit" size="lg" className="mt-6 w-full">
-        Prepare my call
-      </Button>
+      <Button type="submit" size="lg" className="mt-6 w-full">{t("prepareCall")}</Button>
     </form>
   );
 }
