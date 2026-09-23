@@ -129,7 +129,7 @@ export function SiteFooter() {
             <a className="font-semibold underline underline-offset-2" href={CRISIS_988}>
               988
             </a>
-            {" \u00b7 "}
+            {" · "}
             {t("emergencyShort")}:{" "}
             <a className="font-semibold underline underline-offset-2" href={EMERGENCY_911}>
               911
@@ -141,8 +141,8 @@ export function SiteFooter() {
       <div className="border-t border-paper/15 bg-ink">
         <div className="mx-auto max-w-6xl px-4 py-6 text-sm leading-relaxed text-paper sm:px-6">
           <p>
-            {PRACTICE_LEGAL} \u00b7 {ADDRESS_ONE_LINE} \u00b7 {PHONE_DISPLAY} \u00b7 Fax{" "}
-            {FAX_DISPLAY} \u00b7 {EMAIL_DISPLAY} \u00b7 NPI {NPI_INDIVIDUAL} \u00b7 PA license{" "}
+            {PRACTICE_LEGAL} · {ADDRESS_ONE_LINE} · {PHONE_DISPLAY} · Fax{" "}
+            {FAX_DISPLAY} · {EMAIL_DISPLAY} · NPI {NPI_INDIVIDUAL} · PA license{" "}
             {LICENSE_PA}
           </p>
           <nav
@@ -168,7 +168,7 @@ export function SiteFooter() {
             <CookieSettingsButton className="inline-flex min-h-11 items-center font-medium underline underline-offset-4" />
           </nav>
           <p className="mt-4">{t("footerDisclaimer")}</p>
-          <p className="mt-2">\u00a9 {new Date().getFullYear()} {PRACTICE_NAME}</p>
+          <p className="mt-2">© {new Date().getFullYear()} {PRACTICE_NAME}</p>
         </div>
       </div>
     </footer>
