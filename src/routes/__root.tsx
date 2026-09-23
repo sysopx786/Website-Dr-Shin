@@ -6,6 +6,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { AuthProvider } from "@/lib/auth/provider";
+import { LocaleProvider } from "@/lib/i18n/locale";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { SiteShell } from "@/components/layout/site-shell";
 import { jsonLd, PHONE_DISPLAY, PHONE_TEL, PRACTICE_NAME } from "@/lib/site";
@@ -64,9 +65,11 @@ function RootDocument() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <AuthProvider>
-          <SiteShell>
-            <Outlet />
-          </SiteShell>
+          <LocaleProvider>
+            <SiteShell>
+              <Outlet />
+            </SiteShell>
+          </LocaleProvider>
         </AuthProvider>
         <Scripts />
       </body>
